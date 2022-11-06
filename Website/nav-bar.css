@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container-fluid {
+  padding-left: 0rem;
+  padding-right: 0rem;
+  /* overflow: hidden; */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+}

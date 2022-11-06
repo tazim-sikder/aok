@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a92e977bb2.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Assets/the-logo.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Auction</title>
+</head>
+
+<body id="auction-product-body">
+    <div id="nav-placeholder"></div>
+    <div class="the-product-container">
+        <div>
+            <div class="w3-content w3-display-container" style="min-width:200px;max-width:500px;">
+                <img class="mySlides" src="./Assets/product-1.jpg" style="width:100%">
+                <img class="mySlides" src="./Assets/gallery-2.jpg" style="width:100%">
+                <img class="mySlides" src="./Assets/gallery-3.jpg" style="width:100%">
+
+                <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+            </div>
+        </div>
+        <div>
+            <div class="product-information apart">
+                <a id="view-main" href="./auction.html">View all items</a>
+                <h1>A Shirt</h1>
+                <div id="time-container">
+                    <span class="the-dot"></span>
+                    <p>22h 53m 01s left</p>
+                </div>
+                <div style="border: 2px solid rgba(0, 0, 0, 0.363);">
+                    <div class="aligning-stuff" style="margin-top: 40px;">
+                        <p class="ddate">Added: 03/23/2021</p>
+                        <p>Size: M</p>
+                    </div>
+                    <div class="aligning-stuff" style="margin-bottom: 20px;">
+                        <p class="product-price">Current Bid: $8.99</p>
+                        <p>Bids: <a id="clicks">0</a></p>
+                    </div>
+                </div>
+                <button style="font-size: 17px; margin-left: 10px; border: none; width: 125px;" class="thee-btn"
+                    type="button" onClick="onClick()">Click to Bid
+                </button> <br>
+                <p style=" margin-top: 20px;">Enter the amount you want to bid:</p>
+                <input placeholder="Enter Amount..." style="margin-bottom: 20px;"
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> <br>
+
+                <a class="thee-btn" id="myBtn" style="font-size: 20px;" href="#">
+                    Bid Amount
+                </a>
+            </div>
+            <div style="color: black;" class="about-the-product-container">
+                <h1 class="about-product-title">Item Description</h1>
+                <p class="product-desc">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Maiores, rerum? Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Maiores, rerum?
+                    orem ipsum dolor sit amet consectetur adipisicing elit.
+                    Maiores, rerum?
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(function () {
+        $("#nav-placeholder").load("nav-bar.html");
+    });
+
+    var clicks = 0;
+
+    function onClick() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+    var apiLink = "https://api.thearmyofkindness.org/";
+    var data_dummy = "[{\"storeItemId\":\"1\",\"itemName\":\"1\",\"description\":null,\"pictureURL\":null,\"storeCategory\":null,\"price\":\"1\",\"listedDate\":\"10/17/2022 3:11:00 PM\",\"isActive\":\"False\",\"softDeleted\":null,\"msg\":null,\"permission\":null}]";
+
+    var data;
+    var picData;
+
+    async function getData() {
+        var apiLink = "https://api.thearmyofkindness.org/";
+        let html = '';
+        var token = "90cd9aca-a5a7-4152-8d14-477a49150e33";
+        var url = apiLink + "ReadStoreItem?token=" + token + "&search=1";
+        var pictureUrl = apiLink + "ReadStorePictures?token=" + token + "&search=1";
+        // Retrieve JSON StoreItem data from url and stringify
+        const response = await fetch(url);
+        data = await response.json();
+        data = JSON.parse(data);
+        printData(data);
+        // Retrieve JSON StoreItem data from url and stringify
+        const responsePictures = await fetch(pictureUrl);
+        picData = await responsePictures.json();
+        picData = JSON.parse(picData);
+        //printData(picData);
+        data.forEach(obj => {
+            let htmlSegment = '<div>';
+            Object.entries(obj).forEach(([key, value]) => {
+                //if(`${key}` == "storeItem")
+                htmlSegment += '<p>' + `${key} ${value}` + "</p>";
+
+
+            });
+            htmlSegment += '</div>';
+            html += htmlSegment;
+            console.log(htmlSegment);
+        });
+        // Iterate through the response text and display each store
+        // item in a div.
+        let container = document.querySelector('.aok');
+        container.innerHTML = html;
+        console.log("Hello world");
+    }
+
+    // Helper function used for debugging
+    function printData(data) {
+        data.forEach(obj => {
+            Object.entries(obj).forEach(([key, value]) => {
+                console.log(`${key} ${value}`);
+            });
+            console.log('-------------------');
+        });
+    }
+    getData();
+    */
+
+
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</html>

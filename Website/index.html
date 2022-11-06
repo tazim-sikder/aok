@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a92e977bb2.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Assets/the-logo.png">
+    <title>Army of Kindness</title>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+    <section id="hero">
+        <div id="heading-container">
+            <h1 class="header">You are never alone</h1>
+            <p class="sub-header">We help people in Oxford and areas nearby with
+                food and supplies.
+            </p>
+            <a href="#quote" class="scroll-down">
+                <div class="mouse">
+                    <span></span>
+                </div>
+            </a>
+        </div>
+        <img id="hero-logo" src="./Assets/the-logo.png">
+    </section>
+    <section id="quote">
+        <p id="the-quote">“Carry out a random act of kindness, with no
+            expectation of reward, safe in the knowledge that
+            one day someone might do the same for you.”
+            <strong>— Princess Diana</strong>
+        </p>
+    </section>
+    <section id="links">
+        <div id="links-container">
+            <div class="card">
+                <a href="donate.html">
+                    <i class="fa-solid fa-heart fa-2x home-icon"></i>
+                    <img class="card-img" src="Assets/donate-card.jpg" alt="Donate picture">
+                    <h2>Donate Now</h2>
+                    <p>Contribute to our cause.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="get-involved.html">
+                    <i class="fa-solid fa-handshake-angle fa-2x home-icon"></i>
+                    <img class="card-img" src="Assets/volunteer-card.jpg" alt="Volunteer picture">
+                    <h2>Volunteer</h2>
+                    <p>Find a community service<br>effort to join.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <i class="fa-solid fa-box fa-2x home-icon"></i>
+                    <img class="card-img" src="Assets/supplies-card.jpg" alt="Supplies picture">
+                    <h2>Supplies Offered</h2>
+                    <p>See the variety of items<br> we offer.</p>
+                </a>
+            </div>
+        </div>
+        <h1 id="article-heading">Latest News and Updates</h1>
+
+        <article class="article-container">
+            <article class="article-card">
+                <a
+                    href="https://www.miamistudent.net/article/2021/04/local-woman-helping-w-food-insecurity?ct=content_open&cv=cbox_featured&fbclid=IwAR3cEIPdb8H4eEovG2phHtRB4ASAO2uncZ2x2gmwws-UNQP-q6_cqroNse4">
+                    <img src="Assets/MiamiArticle.jpeg">
+                    <div class="article-words">
+                        <p class="article-date">April 2, 2021</p>
+                        <p class="article-title">Local resident helps Miami students with food insecurities</p>
+                        <p class="article-description">Marja Berry, an Oxford resident, has been helping around
+                            80 Miami University students with food insecurities.</p>
+                    </div>
+                </a>
+            </article>
+        </article>
+    </section>
+    <div style="background-color: #c8d8e4;">
+        <h2 style="text-align: center; font-weight: bold; margin-top: 50px;">Videos about Us</h2>
+        <iframe id="displayed-video" src="https://player.vimeo.com/video/756628444?h=a86c6070b6&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Army of Kindness - Video"></iframe>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+    </div>
+</body>
+<script>
+    $(function () {
+        $(" #nav-placeholder").load("nav-bar.html");
+    }); </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script>
+    ScrollReveal().reveal('.header', { delay: 400, duration: 1300 });
+    ScrollReveal().reveal('.sub-header', { delay: 480, duration: 1300 });
+    ScrollReveal().reveal('#hero-logo', { delay: 400, duration: 1000 });
+    ScrollReveal().reveal('#the-quote', { delay: 200, duration: 900 });
+    ScrollReveal().reveal('#quote', { delay: 200, duration: 900 });
+    ScrollReveal().reveal('#links', { delay: 300, duration: 1000 });
+    ScrollReveal().reveal('.card', { delay: 470, duration: 1000 });
+    ScrollReveal().reveal('.article-container', { delay: 300, duration: 1000 });
+</script>
+
+</html>

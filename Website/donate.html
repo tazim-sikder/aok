@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a92e977bb2.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Assets/the-logo.png">
+    <title>Donate</title>
+</head>
+
+<body id="donate">
+    <div id="nav-placeholder"></div>
+    <section id="volunteer-pic"></section>
+    <section>
+        <div class="volunteer-heading">
+            <h1>Donate Now</h1>
+            <p>Every donation makes a difference</p>
+        </div>
+        <div>
+            <p class="volunteer-info donate-version">Payments are accepted using Venmo.
+                We accept donations from corporations, organizations, and
+                individuals nationwide. Every dollar makes a difference.
+                By donating, you are helping our organization continue to
+                be able to help the community. Text or email Mrs. Berry to know about the
+                the different types of donation: mrskb@live.com.    
+            </p>
+        </div>
+    </section>
+</body>
+<script>
+    $(function () {
+        $(" #nav-placeholder").load("nav-bar.html");
+    });
+    ScrollReveal().reveal('.volunteer-heading', { delay: 400, duration: 1300 });
+    ScrollReveal().reveal('.volunteer-info', { delay: 480, duration: 1300 });
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a92e977bb2.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Assets/the-logo.png">
+    <title>Auction</title>
+</head>
+
+<body id="auction-body">
+    <div id="nav-placeholder"></div>
+    <section id="auction-home-section">
+        <div id="home-auction-container">
+            <h1 id="auction-header">The Best Place to Contribute
+                to Someone's Wellbeing
+            </h1>
+            <div id="auction-links">
+                <a href="#">Register</a>
+                <a href="#">View Current Winners</a>
+            </div>
+        </div>
+    </section>
+    <section id="curr-auction-section">
+        <h1 id="auctions-header">Current Auctions</h1>
+        <p class="header-p">See the available items</p>
+        <div class="product-container">
+            <div class="products">
+                <img class="product-img" src="./Assets/gallery-1.jpg"/>
+                <h1>Shirt</h1>
+                <p>Current Bid: $8.99</p>
+                <p>Time left: 24:32</p>
+                <p>Number of Bids: 8</p>
+                <a href="auction-product.html">See details</a>
+            </div>
+            <div class="products">
+                <img class="product-img" src="./Assets/gallery-1.jpg"/>
+                <h1>Shirt</h1>
+                <p>Current Bid: $8.99</p>
+                <p>Time left: 24:32</p>
+                <p>Number of Bids: 8</p>
+                <a href="auction-product.html">See details</a>
+            </div>
+            <div class="products">
+                <img class="product-img" src="./Assets/gallery-1.jpg"/>
+                <h1>Shirt</h1>
+                <p>Current Bid: $8.99</p>
+                <p>Time left: 24:32</p>
+                <p>Number of Bids: 8</p>
+                <a href="auction-product.html">See details</a>
+            </div>
+        </div>
+    </section>
+    <section id="auction-winner-section">
+        <h1 id="winner-header">Current Winner(s)</h1>
+        <p id="congrats">Congratulations to....</p>
+        <div class="winner-container">
+            <h1>John Doe</h1>
+            <p>For winning the Macbook Pro</p>
+        </div>
+            <a id="history-link" href="./previous-auctions.html">
+                See Previous Bids
+            </a>
+    </section>
+    <script src="auction.js"></script>
+</body>
+<script>
+    $(function () {
+        $(" #nav-placeholder").load("nav-bar.html");
+    });
+    ScrollReveal().reveal('#auction-header', {
+        delay: 400, duration: 1300
+    });
+    ScrollReveal().reveal('#auction-links', {
+        delay: 480, duration: 1300
+    });
+    ScrollReveal().reveal('.products', { 
+        delay: 480, duration: 1300
+    });
+    ScrollReveal().reveal('#auctions-header', { 
+        delay: 480, duration: 1300 });
+    ScrollReveal().reveal('#winner-header', { delay: 480, duration: 1300 });
+    ScrollReveal().reveal('.header-p', { delay: 480, duration: 1300 });
+    ScrollReveal().reveal('.winner-container', { delay: 480, duration: 1300 });
+    ScrollReveal().reveal('#congrats', { delay: 480, duration: 1300 });
+    ScrollReveal().reveal('#history-link', { delay: 480, duration: 1300 });
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</html>

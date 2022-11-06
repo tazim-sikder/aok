@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a92e977bb2.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Assets/the-logo.png">
+    <title>Store Items</title>
+</head>
+
+<body id="store-item-body">
+    <div id="nav-placeholder"></div>
+    <section id="store-section">
+        <h1 id="store-heading">Product Section</h1>
+        <div class="store-item-container">
+            <div class="store-item">
+                <div class="img-container">
+                </div>
+                <div id="the-store-info">
+                    <h1 class="item-name"></h1>
+                    <h1 class="qwer"></h1>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</body>
+<script>
+    $(function () {
+        $(" #nav-placeholder").load("nav-bar.html");
+    });
+   
+    /*
+const apiLink = "http://api.thearmyofkindness.org/AddStoreItem?token=085BF29E-16AE-4038-B260-94B451CA9E5C&itemName=test&price=50.00&storeCategory=test&listedDate=null&isActive=0";
+    function myFunction(i) {
+        a = $.ajax({
+            method: "POST",
+            mode: 'no-cors',
+            url: apiLink,
+
+            success: function (data, status, xhr) {
+                console.log("success")
+            },
+            error: function (xhr, status, error) {
+                console.log("error")
+            }
+        });
+    }
+*/
+
+    fetch("http://api.thearmyofkindness.org/AddStoreItem?token=085BF29E-16AE-4038-B260-94B451CA9E5C&itemName=test&price=50.00&storeCategory=test&listedDate=null&isActive=0", {
+        method: 'POST',
+        mode: 'no-cors',
+
+    }).then((res) => {
+            if(!res.ok) {
+                document.getElementById('the-store-info').innerHTML = `
+    
+                <h1> 085BF29E-16AE-4038-B260-94B451CA9E5C </h1>
+                <h1> test</h1>
+                <p> 50.00 </p>
+                <p> test </p>
+                <p> null </p>
+                <p> 0 </p>
+            `
+            }
+            return res.json();
+        })
+        .then((data) => {
+            document.getElementById('the-store-info').innerHTML = `
+            <h1> 085BF29E-16AE-4038-B260-94B451CA9E5C </h1>
+                <h1> test</h1>
+                <p> 50.00 </p>
+                <p> test </p>
+                <p> null </p>
+                <p> 0 </p>
+            `
+        })
+        .catch((err) => console.error(err));
+/*
+
+    //const apiLink = "http://api.thearmyofkindness.org/AddStoreItem?token=085BF29E-16AE-4038-B260-94B451CA9E5C&itemName=test&price=50.00&storeCategory=test&listedDate=null&isActive=0";
+   
+    let item = {
+        fetchItem: function() {
+            fetch(
+            'http://api.thearmyofkindness.org/AddStoreItem?token=085BF29E-16AE-4038-B260-94B451CA9E5C&itemName=test&price=50.00&storeCategory=test&listedDate=null&isActive=0'
+            ).then((response) => {
+                if (!response.ok) {
+                alert("Enter a valid city.");
+            }
+        return response.json();
+            })
+            .then((data) => this.displayItem(data));
+        },
+        displayItem: function(data) {
+            const {t} = data.token;
+            document.querySelector(".item-name").innerHTML = "dasdda" + token;
+            document.getElementById("quer").innerHTML = "dasdda";
+
+        }
+    }
+*/
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</html>

@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.images {
+  height: 600px;
+}
+
+.images img {
+  height: 600px;
+  object-fit: cover;
+}
+
+.who {
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgb(36, 164, 138);
+}
+
+.member {
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgb(211, 79, 79);
+  position: relative;
+}
+
+.member img {
+  display: block;
+  max-width: 40vh;
+  max-height: 100vw;
+  border-radius: 2rem;
+  width: auto;
+  height: auto;
+}
+
+.questions {
+  height: 100vh;
+  background: rgb(67, 91, 175);
+  color: black;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  padding-top: auto;
+}
+
+.privacy {
+  height: 100vh;
+  background: rgb(36, 164, 138);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.contact {
+  height: 100vh;
+  background: lightsalmon;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.social a {
+  text-decoration: none;
+  font-size: 4.5em;
+  padding: 3rem;
+}
+
+.fa-facebook {
+  color: #3b5998;
+}
+
+.fa-twitter {
+  color: #00aecd;
+}
+
+.fa-instagram {
+  color: #cd486b;
+}
+
+.accordion {
+  width: 70vw;
+  padding-top: 20px;
+}
